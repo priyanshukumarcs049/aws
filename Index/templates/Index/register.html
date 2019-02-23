@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block location %}
+{% if user.is_authenticated %}
+{% load static %}
+
+<div class="col-lg-6">
+    <div class="card">
+    
+<a class="btn btn-warning btn-lg btn-block" href="{% url 'Index:profileupdate' pk=user.profile.pk %}"> update</a>
+   </div>
+</div>
+
+{% else %}
+
+      <li><a href="{% url 'Index:profile' %}" >register</a></li>
+      <li><a href="{% url 'login' %}" >login</a></li>
+
+{% endif %}
+{% endblock %}

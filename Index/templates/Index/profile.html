@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block location %}
+{% if user.is_authenticated %}
+<div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">User Profile</div>
+          <div class="card-body card-block">
+               <form action="#" method="post" class="">
+                 {% csrf_token %}
+                 <div class="row form-group">
+                     <div class="col col-md-3">
+                         <label for="disabled-input" class=" form-control-label">Full Name</label>
+                     </div>
+                     <div class="col-12 col-md-9">
+                         <input type="text" id="disabled-input" name="disabled-input" placeholder="{{ user.profile.fullname }}" disabled="" class="form-control">
+                     </div>
+                 </div>
+                 <div class="row form-group">
+                     <div class="col col-md-3">
+                         <label for="disabled-input" class=" form-control-label">Location</label>
+                     </div>
+                     <div class="col-12 col-md-9">
+                         <input type="text" id="disabled-input" name="disabled-input" placeholder="{{ user.profile.location }}" disabled="" class="form-control">
+                     </div>
+                 </div>
+                 <div class="row form-group">
+                     <div class="col col-md-3">
+                         <label for="disabled-input" class=" form-control-label">DOB</label>
+                     </div>
+                     <div class="col-12 col-md-9">
+                         <input type="text" id="disabled-input" name="disabled-input" placeholder="{{ user.profile.birth_date }}" disabled="" class="form-control">
+                     </div>
+                 </div>
+                 <div class="row form-group">
+                     <div class="col col-md-3">
+                         <label for="disabled-input" class=" form-control-label">Phone NO</label>
+                     </div>
+                     <div class="col-12 col-md-9">
+                         <input type="text" id="disabled-input" name="disabled-input" placeholder="{{ user.profile.phone }}" disabled="" class="form-control">
+                     </div>
+                 </div>
+                 <div class="row form-group">
+                     <div class="col col-md-3">
+                         <label for="disabled-input" class=" form-control-label">Email ID</label>
+                     </div>
+                     <div class="col-12 col-md-9">
+                         <input type="text" id="disabled-input" name="disabled-input" placeholder="{{ user.profile.email }}" disabled="" class="form-control">
+                     </div>
+                 </div>
+                </form>
+                <a class="btn btn-warning btn-lg btn-block" href="{% url 'Index:profileupdate' pk=user.profile.pk %}"> update</a>
+          </div>
+      </div>
+</div>
+{% endif %}
+{% endblock %}

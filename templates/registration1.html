@@ -1,0 +1,165 @@
+
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+
+    <!-- Fontfaces CSS-->
+    <link href="{% static 'css/font-face.css' %}" rel="stylesheet" media="all">
+    <link href="{% static  'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static  'vendor/font-awesome-5/css/fontawesome-all.min.css' %}"  rel="stylesheet" media="all">
+    <link href="{% static  'vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="{% static 'vendor/bootstrap-4.1/bootstrap.min.css' %}" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'vendor/animsition/animsition.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/wow/animate.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/slick/slick.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'css/theme.css' %}" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+  <div class="page-wrapper">
+<div class="main-content">
+      <div class="section__content section__content--p30">
+          <div class="container-fluid">
+              <div class="row">
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <strong>Registration</strong> Page
+        </div>
+        <div class="card-body card-block">
+            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+              {% csrf_token %}
+              {{ form.as_p }}
+<!--
+                <div class="row form-group">
+                   <div class="col col-md-3">
+                       <label for="id_fullname" class=" form-control-label">Full Name:</label>
+                   </div>
+                   <div class="col-12 col-md-9">
+                       <input type="text" id="id_fullname" name="fullname" maxlength="30" placeholder="Enter Full Name" class="form-control">
+                       <small class="form-text text-muted">Enter your Full name</small>
+                   </div>
+                </div>
+                <div class="row form-group">
+                   <div class="col col-md-3">
+                       <label for="id_location" class=" form-control-label">Location:</label>
+                   </div>
+                   <div class="col-12 col-md-9">
+                       <input type="text" id="id_location" name="location" maxlength="30" placeholder="Enter Location" class="form-control">
+                       <small class="form-text text-muted">Enter your Current City</small>
+                   </div>
+                </div>
+                <div class="row form-group">
+                   <div class="col col-md-3">
+                       <label for="id_birth_date" class=" form-control-label">DOB:</label>
+                   </div>
+                   <div class="col-12 col-md-9">
+                       <input type="date" id="id_birth_date" name="birth_date" placeholder="DD-MM-YYYY" class="form-control">
+                       <small class="form-text text-muted">Enter your Date Of Birth</small>
+                   </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="id_gender" class=" form-control-label">Gender:</label>
+                    </div>
+                     <div class="col-12 col-md-9">
+                        <select name="gender" id="id_gender" class="form-control">
+                            <option value="0">Please select</option>
+                            <option value="MA">MALE</option>
+                            <option value="FE">FEMALE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                   <div class="col col-md-3">
+                       <label for="id_phone" class=" form-control-label">Phone NO:</label>
+                   </div>
+                   <div class="col-12 col-md-9">
+                       <input type="tel" id="id_phone" name="phone" placeholder="Enter Phone number" class="form-control">
+                       <small class="form-text text-muted">Enter your Mobile Number</small>
+                   </div>
+                </div>
+                <div class="row form-group">
+                   <div class="col col-md-3">
+                       <label for="id_image" class=" form-control-label">Image:</label>
+                   </div>
+                   <div class="col-12 col-md-9">
+                       <input type="file" id="id_image" name="image" accept="image/*" class="form-control-file">
+                   </div>
+               </div>
+               <div class="row form-group">
+                  <div class="col col-md-3">
+                      <label for="id_user" class=" form-control-label">UserName:</label>
+                  </div>
+                  <div class="col-12 col-md-9">
+                      <input type="text" id="id_user" name="user" placeholder="Enter Username" class="form-control">
+                      <small class="form-text text-muted">Enter your Username provided by admin</small>
+                  </div>
+               </div> -->
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                    </button>
+                    <button type="reset" class="btn btn-danger btn-sm">
+                        <i class="fa fa-ban"></i> Reset
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+  <!-- Main -->
+  <script src="{% static 'vendor/jquery-3.2.1.min.js' %}"></script>
+  <!-- Bootstrap JS-->
+  <script src="{% static 'vendor/bootstrap-4.1/popper.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap-4.1/bootstrap.min.js' %}"></script>
+  <!-- Vendor JS       -->
+  <script src="{% static 'vendor/slick/slick.min.js' %}">
+  </script>
+  <script src="{% static 'vendor/wow/wow.min.js'%}"></script>
+  <script src="{% static 'vendor/animsition/animsition.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>
+  <script src="{% static 'vendor/counter-up/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'vendor/counter-up/jquery.counterup.min.js' %}"></script>
+  <script src="{% static 'vendor/circle-progress/circle-progress.min.js' %}"></script>
+  <script src="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+  <script src="{% static 'vendor/chartjs/Chart.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+
+  <!-- Main JS-->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
+
+
+
+
+  <!-- Copyright -->

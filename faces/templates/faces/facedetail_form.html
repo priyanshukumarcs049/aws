@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block location %}
+{% if user.is_authenticated %}
+
+<form action="" method="post" enctype="multipart/form-data" >
+	<br>
+	<br>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                    </button>
+                    <button type="reset" class="btn btn-danger btn-sm">
+                        <i class="fa fa-ban"></i> Reset
+                    </button>
+                </div>
+</form>
+{% endif %}
+{% endblock %}

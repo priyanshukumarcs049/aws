@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block location %}
+{% if user.is_authenticated %}
+</script>
+<div class="col-lg-6">
+  <div class="card">
+      <div class="card-header">
+        <strong>DeleteCamera</strong>
+    </div>
+    <div class="card-body card-block">
+        <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+          {% csrf_token %}
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="select" class=" form-control-label">Select</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <select name="name1" id="select" class="form-control">
+                        <option value="0">Please select</option>
+                          {% for location in locations %}
+                           <option value="{{ location.pk }}">{{ location.name }}</option>
+                               {% endfor %}
+                    </select>
+                </div>
+            </div>
+       </div>
+       <div class="card-footer">
+        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-dot-circle-o"></i> Submit</button>
+        <button type="reset" class="btn btn-danger btn-sm"><i class="fa fa-ban"></i> Reset</button>
+    </form>
+    </div>
+
+ </div>
+</div>
+
+
+
+
+
+
+  <!-- Copyright -->
+
+{% else %}
+
+      <li><a href="{% url 'login' %}" >Continue</a></li>
+
+{% endif %}
+{% endblock %}

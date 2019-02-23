@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+
+
+{% block location %}
+{% for location in locations %}
+
+  {% endfor %}
+{% endblock %}
+
+{% block content %}
+
+
+<h1>  Introductions </h1>
+
+ <p>
+            
+              
+               2.  Second go to <a href="{% url  'addcamera' %}">Camera</a> to input IP of the camera you use and specify the name of it,
+                 select the Location you want to put and Choose the Function of the camera you want (or both)
+               
+            </p>
+{% endblock %}

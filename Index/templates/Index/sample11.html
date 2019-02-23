@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block location %}
+
+<div id="wrapper">
+
+  <!-- Header -->
+    <header id="header">
+    </header>
+
+  <!-- Nav -->
+    <nav id="nav">
+      <ul class="links">
+        <li ><a href="index.html">Home</a></li>
+        <li ><a href="{% url 'cameras_list' %}">Live View</a></li>
+        <li ><a href="{% url 'notification' %}">Notifications</a></li>
+      </ul>
+      <ul class="icons">
+        <li><a href="{% url 'cameras_list' %}" class="icon fa-instagram"><span class="label">Twitter</span></a></li>
+        <li><a href="{% url 'addcamera' %}" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="{% url 'deletecamera' %}" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+
+      </ul>
+    </nav>
+
+  <!-- Main -->
+    <div id="main">
+
+          <!-- Form -->
+            <h2>notification</h2>
+            <form method="post" action="#">
+               {% csrf_token %}
+              <div class="row gtr-uniform">
+                <!-- <div class="col-12">
+                  <input type="text" name="name" placeholder="Camera Name" />
+                </div>
+                <div class="col-12">
+                  <input type="text" name="ip" placeholder="Camera URL" />
+                </div>
+                <div class="col-12">
+                  <input type="text" name="auth_uname"  placeholder="Username" />
+                </div>
+                <div class="col-12">
+                  <input type="password" name="auth_pwd"  placeholder="Password" />
+                </div> -->
+                <div class="col-12">
+                  <ul class="actions">
+                    <li><input type="submit" value="send notification" class="primary" /></li>
+                  </ul>
+                </div>
+              </div>
+            </form>
+
+
+
+
+
+  <!-- Copyright -->
+    <div id="copyright">
+      <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+ <!-- <form class="second3" action="" method="POST">
+                {% csrf_token %}
+                IP Camera :<br>
+                <input type="text" name="ip" style="color:green;" ><br><br>
+                Camera Name : <br>
+                <input type="text" name="name" style="margin-top:6px;" ><br><br>
+                username :<br>
+                <input type="text" name="auth_uname" style="color:green;" ><br><br>
+                 password :<br>
+                <input type="password" name="auth_pwd" style="color:green;" ><br><br>
+                <br><br><br>
+
+                Choose Function:<br>
+                <input type="checkbox" value="0" name="option[]">Face Recognition<br>
+                <input type="checkbox" value="1" name="option[]">Object Detection<br><br>
+
+                <input type="submit" name="submit" value="OK" style="align-content: center;">
+            </form> -->
+
+{% endblock %}

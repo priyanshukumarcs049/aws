@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block location %}
+{% if user.is_authenticated %}
+<div class="row">
+
+   {% for cam in CameraLists %}
+   <div class="col-lg-6">
+     <section class="card">
+      <div class="card-body text-secondary" style="background-color:red"><img src="{% url 'Index:video_streamer' camID=cam.id  %}" /></div>
+    </section>
+      </div>
+   {% endfor %}
+
+</div>
+  <!-- Main -->
+  <!-- Copyright -->
+
+{% else %}
+
+      <li><a href="{% url 'Index:profile' %}" >register</a></li>
+      <li><a href="{% url 'login' %}" >login</a></li>
+
+{% endif %}
+{% endblock %}

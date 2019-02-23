@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block location %}
+{% if user.is_authenticated %}
+{% load static %}
+
+<div class="col-lg-6">
+    <div class="card">
+      <div class="card-header">Add Camera</div>
+          <div class="card-body card-block">
+               <form action="#" method="POST" class="">
+                 {% csrf_token %}
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user"></i>
+                                  </div>
+                                      <input type="text" id="name" name="name" placeholder="Camera Name" class="form-control" required>
+                                  </div>
+                    </div>
+                    <div class="form-group">
+                            <div class="input-group">
+                              <div class="input-group-addon">
+                                  <i class="fa fa-camera"></i>
+                                    </div>
+                                  <input type="text" id="ip" name="ip" placeholder="Camera URL" class="form-control" required>
+                          </div>
+                    </div>
+                    <div class="form-actions form-group">
+                      <button type="submit" class="btn btn-success btn-lg btn-block">Preview</button>
+                  </div>
+                    {% if questions == None %}
+                    <div class="row">
+                       <div class="col-lg-6">
+                         <section class="card">
+                          <div class="card-body text-secondary"><img src="{% static 'images/no-preview-available.png' %}" height="700" width="700"/></div>
+                        </section>
+                          </div>
+                    </div>
+                    {% else %}
+                    <div class="row">
+                       <div class="col-lg-6">
+                         <section class="card">
+                          <div class="card-body text-secondary"><img src="{% url 'Index:video_streamer1' %}" height="700" width="700"/></div>
+                        </section>
+                          </div>
+                    </div>
+                    {% endif %}
+                    <!-- <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user"></i>
+                                  </div>
+                                      <input type="text" id="auth_uname" name="auth_uname" placeholder="username" class="form-control" required>
+                                  </div>
+                    </div> -->
+                          <!-- <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-asterisk"></i>
+                            </div>
+                          <input type="password" id="auth_pwd" name="auth_pwd" placeholder="Password" class="form-control" required>
+                          </div>
+                      </div> -->
+                      <div class="form-actions form-group">
+                        <button type="submit" class="btn btn-success btn-sm">Submit</button>
+                    </div>
+
+                    <a class="btn btn-warning btn-lg btn-block" href="{% url 'Index:preview' %}">preview</a>
+
+                </form>
+
+
+          </div>
+      </div>
+                    </div>
+
+
+
+  <!-- Main -->
+  <!-- Copyright -->
+{% else %}
+
+      <li><a href="{% url 'Index:profile' %}" >register</a></li>
+      <li><a href="{% url 'login' %}" >login</a></li>
+
+{% endif %}
+{% endblock %}

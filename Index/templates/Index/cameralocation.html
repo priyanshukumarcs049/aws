@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block location %}
+    {% if user.is_authenticated %}
+  <li><a href="{% url 'home' %}" >Home</a> </li>
+  <li><a href="{% url 'addcamera' %}">AddCamera</a></li>
+  <li><a href="{% url 'deletecamera' %}">DeleteCamera</a></li>
+  <li><a href="{% url 'cameras_list' %}">LIVE VIEW</a></li>
+  <li><a href="#">Notification</a></li>
+  <li><a href="{% url 'logout' %}">logout</a></li>
+
+{% else %}
+
+  <li><a href="{% url 'login' %}">login</a></li>
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+	{% for cam in CameraLists %}
+
+        <img  src="{% url 'video_streamer' camID=cam.id  %}" width="300px" height="300px"/>
+        <p> {{ cam.name }}</p>
+
+    {% endfor %}
+
+{% endblock %}

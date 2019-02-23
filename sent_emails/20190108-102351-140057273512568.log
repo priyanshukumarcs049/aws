@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 0.0.0.0:8001
+From: webmaster@localhost
+To: jayasurya.gupta@gmail.com
+Date: Tue, 08 Jan 2019 10:23:51 -0000
+Message-ID: <154694303143.11466.1907228038568846859@lncl-HP-Z600-Workstation>
+
+
+You're receiving this email because you requested a password reset for your user account at 0.0.0.0:8001.
+
+Please go to the following page and choose a new password:
+
+http://0.0.0.0:8001/accounts/reset/NQ/52t-c11b9f68d2458ab3d1a4/
+
+Your username, in case you've forgotten: jayasurya
+
+Thanks for using our site!
+
+The 0.0.0.0:8001 team
+
+
+
+-------------------------------------------------------------------------------
